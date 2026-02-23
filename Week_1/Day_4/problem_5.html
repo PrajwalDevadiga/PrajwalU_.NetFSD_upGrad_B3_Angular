@@ -1,0 +1,33 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Number Analysis Tool</h1>
+        <p id="checkPosOrNeg"></p>
+        <p id="oddOrEven"></p>
+        <p id="forLoopNumbers"></p>
+        <p id="countNumbers"></p>
+        <script>
+            let checkPosOrNegEl = document.getElementById("checkPosOrNeg")
+            let oddOrEvenEl = document.getElementById("oddOrEven");
+            let forLoopNumbersEl = document.getElementById("forLoopNumbers");
+            let countNumbersEl = document.getElementById("countNumbers");
+
+            let number = 10;
+            let count = "";
+            let checkPosOrNeg = (number >= 0) ? "Positive" : "Negative";
+            checkPosOrNegEl.textContent = "Number is " + checkPosOrNeg;
+            
+            if (number % 2 == 0) {
+                oddOrEvenEl.textContent = "Number is Even";
+            } else {
+                oddOrEvenEl.textContent = "Number is Odd";
+            }
+
+            forLoopNumbersEl.textContent = "Numbers from 1 to " + number + " are:";
+            for (let i = 1; i<= number; i++){
+                count += i + "<br/>";
+            }
+            countNumbersEl.innerHTML = count;
+        </script>
+    </body>
+</html>

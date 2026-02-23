@@ -1,0 +1,46 @@
+.heading {
+    text-align: center;
+    color: aqua;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: #375069;
+}
+
+p {
+    color: beige;
+    font-size: 16px;
+}
+
+fieldset {
+    background-color: lightcyan;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+div {
+    margin-bottom: 15px
+}
+
+input {
+    padding: 8px;  
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+label {
+    font-weight: bold;
+}

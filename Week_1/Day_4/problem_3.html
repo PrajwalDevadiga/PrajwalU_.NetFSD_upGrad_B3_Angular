@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+    <h2>Discount Calculator</h2>
+    <p id="amount"></p>
+    <p id="discount"></p>
+    <p id="discountAmount"></p>
+    <p id="finalAmount"></p>
+
+    <script>
+        let amountEl = document.getElementById("amount");
+        let discountEl = document.getElementById("discount");
+        let discounrAmountEl = document.getElementById("discountAmount");
+        let finalEl = document.getElementById("finalAmount");
+        let amount = 3500;
+
+        let discount;
+        let discountAmount;
+        let finalAmount;
+
+        if (amount >= 5000) {
+            discount = 20;
+        } else if (amount >= 3000) {
+            discount = 10;
+        } else {
+            discount = 0;
+        }
+
+        discountAmount = (amount * discount) / 100;
+
+        finalAmount = amount - discountAmount;
+
+        amountEl.innerText= "Amount: ₹" + amount;
+        discountEl.innerText= "Discount Applied: " + discount + "%";
+        discounrAmountEl.innerText= "Discount: ₹" + discountAmount;
+        finalEl.innerText= "FinalAmount: ₹" + finalAmount;
+    </script>
+
+</body>
+</html>
+
+
+
+

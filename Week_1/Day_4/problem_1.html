@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: lightblue;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .content {
+            text-align: center;
+            padding: 40px;
+            font-size: 20px;
+        }
+
+        .laptop-screen {
+            display: block;
+        }
+
+        .mobile-screen {
+            display: none;
+        }
+
+        .tab-screen {
+            display: none;
+        }
+
+
+        @media (min-width: 481px) and (max-width: 768px) {
+
+            body {
+                background-color: lightcoral;
+            }
+
+            .content {
+                font-size: 16px;
+            }
+
+            .laptop-screen {
+                display: none;
+            }
+
+            .mobile-screen {
+                display: none;
+            }
+
+            .tab-screen {
+                display: block;
+            }
+
+        }
+
+        @media (min-width: 320px) and (max-width: 480px) {
+
+            body {
+                background-color: lightgreen;
+            }
+
+            .content {
+                font-size: 16px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .laptop-screen {
+                display: none;
+            }
+
+            .mobile-screen {
+                display: block;
+            }
+
+            .tab-screen {
+                display: none;
+            }
+        }
+
+
+    </style>
+
+    <header>
+        <h1>My Responsive Website</h1>
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="content">
+        <h2>Welcome</h2>
+        <p class="laptop-screen">
+            Welcome to the Laptop screen size.
+        </p>
+        <p class="tab-screen">
+            Welcome to the Tab screen size.
+        </p>
+        <p class="mobile-screen">
+            Welcome to the Mobile screen size.
+        </p>
+    </section>
+
+</body>
+</html>

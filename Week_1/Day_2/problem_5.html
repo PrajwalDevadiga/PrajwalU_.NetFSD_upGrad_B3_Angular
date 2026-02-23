@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Enrollment Form</h1>
+
+        <form action="#" method="get">
+            <fieldset>
+                <legend>Enrollment</legend>
+
+            <label>Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br/><br/>
+
+            <label for="course">Preferred Course:</label>
+            <input list="courses" id="course" name="course" required placeholder="Type to search...">
+            <datalist id="courses">
+                <option value="Python">
+                <option value="Javascript">
+                <option value="Machine Learning">
+                <option value="Java">
+            </datalist>
+            <br/><br/>
+
+            <label for="file">Enrollment Progress:</label>
+            <progress id="file" value="40" max="100">40%</progress>
+            <br/><br/>
+
+            <label>Experience:</label>
+            <input type="number" id="experience" name="Experience" min="0" max="40">
+            <br/><br/>
+
+
+            <label>Preffered Learning Level:</label>
+            <input type="range" id="learn" name="learn" min="1" max="10">
+            <br/><br/>
+
+            <label for="skill">Current Skill Level:</label>
+            <meter id="skill" value="2" min="0" max="4" low="1" high="3" optimum="4">
+                Beginner
+            </meter>
+            <strong>(Visual indicator: Red=Low, Yellow=Mid, Green=High)</strong>
+            <br><br>
+
+            <input type="submit" value="Enroll Now">
+            </fieldset>
+        </form>
+    </body>
+</html>

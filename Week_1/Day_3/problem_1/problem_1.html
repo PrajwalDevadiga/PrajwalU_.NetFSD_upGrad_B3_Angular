@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Registration</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1 class="heading">Student Registration Form</h1>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Registration Form</legend>
+                <br/>
+                <div>
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" autofocus required>
+                </div>
+                <br/><br/>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <br/><br/>
+                <div>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                </div>
+                <br/><br/>
+                <div>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" min="5" max="30" required>
+                </div>
+                <br/><br/>
+                <div>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <br/>
+                <button class="button" type="submit">Register</button>
+            </fieldset>
+        </form>
+    </body>
+</html>

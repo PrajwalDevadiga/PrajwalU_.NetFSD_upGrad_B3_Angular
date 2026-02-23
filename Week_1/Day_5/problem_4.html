@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile Manager</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        #profileContainer {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            margin-top: 20px;
+            background-color: #f4f4f4;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Student Profile Manager</h1>
+
+    <button id="displayBtn">Display Profile</button>
+    <br><br>
+    <input type="number" id="newMarks" placeholder="Enter New Marks">
+    <button id="updateBtn">Update Marks</button>
+
+    <div id="profileContainer"></div>
+
+    <script>
+
+        var student = {
+            name: "Rahul",
+            rollNo: 101,
+            marks: 75
+        };
+
+        function updateStudentProfile(studentObj) {
+            var container = document.getElementById("profileContainer");
+            container.innerHTML =
+                "<h3>Student Profile</h3>" +
+                "<p>Name: " + studentObj.name + "</p>" +
+                "<p>Roll No: " + studentObj.rollNo + "</p>" +
+                "<p>Marks: " + studentObj.marks + "</p>";
+        }
+
+        function updateMarks(newMarks) {
+            student.marks = newMarks;
+            updateStudentProfile(student);
+        }
+
+        document.getElementById("displayBtn").addEventListener("click", function() {
+            updateStudentProfile(student);
+        });
+
+        document.getElementById("updateBtn").addEventListener("click", function() {
+            var value = document.getElementById("newMarks").value;
+            updateMarks(value);
+        });
+
+    </script>
+
+</body>
+</html>

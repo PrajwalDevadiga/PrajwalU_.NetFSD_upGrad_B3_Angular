@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;  
+        }
+
+        body {
+            background-color: lightcyan;
+        }
+
+        .head {
+            background-color: darkblue;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .blog-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+        }
+
+
+        h1 {
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .container h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .container p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .container button {
+            padding: 8px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .container button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+
+    <header class="head">
+        <h1>My Blogs</h1>
+    </header>
+
+    <main class="blog-container">
+        <div class="container">
+            <h2>Learning About HTML</h2>
+            <p>Learning the foundation of web development by uisong HTML structures, Hyperlinks, Forms.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="container">
+            <h2>Learning About CSS</h2>
+            <p>Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and styling of a document written in a markup language such as...</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="container">
+            <h2>Learning About Javascript</h2>
+            <p>JavaScript (JS) is a programming language and core technology of the Web, alongside HTML and CSS. It was created by Brendan Eich in..</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="container">
+            <h2>Learning About React</h2>
+            <p>React is a JavaScript library for building user interfaces. React is used to build single-page applications. React allows us to create reusable UI components...</p>
+            <button>Read More</button>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1>Student Grade Evaluator</h1>
+        <p id="grade"></p>
+        <script>
+                let gradeEl = document.getElementById("grade");
+                let marks = 85;
+                if (marks >= 75){
+                    gradeEl.innerText = "Grade A";
+                    gradeEl.style.backgroundColor = "green";
+                    gradeEl.style.color = "white";
+                    gradeEl.style.textAlign = "center";
+                } else if (marks >= 60) {
+                    gradeEl.innerText = "Grade B";
+                    gradeEl.style.backgroundColor = "orange";
+                    gradeEl.style.color = "white";
+                    gradeEl.style.textAlign = "center";
+                } else if (marks >= 40) {
+                    gradeEl.innerText = "Grade C";
+                    gradeEl.style.backgroundColor = "yellow";
+                    gradeEl.style.color = "black";
+                    gradeEl.style.textAlign = "center";
+                } else if (marks < 40){
+                    gradeEl.innerText = "Fail";
+                    gradeEl.style.backgroundColor = "red";
+                    gradeEl.style.color = "white";
+                    gradeEl.style.textAlign = "center";
+                }
+        </script>
+
+    </body>
+</html>
