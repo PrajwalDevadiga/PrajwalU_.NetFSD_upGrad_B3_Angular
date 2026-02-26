@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Vehicle Management System</title></head>
+    <body>
+        <h1>Vehicle Management System</h1>
+        <button onclick="check()">Check Details</button>
+        <br/><br/>
+        <p id="result"></p>
+
+        <script>
+            class Vehicle {
+                constructor (brand, speed) {
+                    this.brand = brand;
+                    this.speed = speed;
+                }
+
+                displayInfo() {
+                    return `Brand: ${this.brand} <br/>
+                        Speed: ${this.speed} km/h <br/>`
+                }
+                
+            }
+
+            class Car extends Vehicle {
+                constructor (brand, speed, fuelType) {
+                    super(brand, speed);
+                    this.fuelType = fuelType;
+                }
+
+                showCarDetails() {
+                    return `Fuel Type: ${this.fuelType} <br/> `
+                }
+            }
+
+        function check() {
+            const car1 = new Car("Hyundai", 180, "Petrol");
+
+            const resultEl = document.getElementById("result");
+
+            resultEl.innerHTML = "";
+
+            resultEl.innerHTML += car1.displayInfo() + "<hr/>";
+            resultEl.innerHTML += car1.showCarDetails();
+            }
+        </script>
+    </body>
+</html>

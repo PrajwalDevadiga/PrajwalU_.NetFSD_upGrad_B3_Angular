@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Payment System</title></head>
+    <body>
+        <h1>Payment System</h1>
+        <button onclick="check()">Check Details</button>
+        <br/><br/>
+        <p id="result"></p>
+
+        <script>
+            class Payment {
+                pay(amount) {
+                    return `Processing Payment`;
+                }
+            }
+            class CreditCardPayment extends Payment {
+                pay(amount) {
+                    return `Payment of Rs ${amount} done using Credit Card <br/>`;
+                }
+            }
+
+            class UPIPayment extends Payment {
+                pay(amount) {
+                    return `Payment of Rs ${amount} done using UPI Payment <br/>`;
+                }
+            }
+
+            class CashPayment extends Payment {
+                pay(amount) {
+                    return `Payment of Rs ${amount} done using Cash Payment`;
+                }
+            }
+        
+        function check() {
+            const payment1 = new CreditCardPayment();
+            const payment2 = new UPIPayment();
+            const payment3 = new CashPayment();
+
+            const resultEl = document.getElementById("result");
+
+            resultEl.innerHTML = "";
+
+            resultEl.innerHTML += payment1.pay(500)
+            resultEl.innerHTML += payment2.pay(750)
+            resultEl.innerHTML += payment3.pay(2000)
+            }
+        </script>
+    </body>
+</html>

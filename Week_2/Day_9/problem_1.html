@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Student Marks</title></head>
+    <body>
+        <h1>Student Details</h1>
+        <button onclick="check()">Check Details</button>
+        <br/><br/>
+        <p id="result"></p>
+
+        <script>
+            class Student {
+                constructor(name, rollNumber, marks) {
+                    this.name = name;
+                    this.rollNumber = rollNumber;
+                    this.marks = marks;
+                }
+
+                getDetails() {
+                    return `Name: ${this.name} <br/>
+                        Roll Number: ${this.rollNumber} <br/>
+                        Marks: ${this.marks} <br/>`
+                }
+
+                getGrade() {
+                    if (this.marks >= 90) {
+                        return "A"
+                    } else if(this.marks >= 75 && this.marks <= 89) {
+                        return "B"
+                    } else if(this.marks >= 50 && this.marks <= 74) {
+                        return "C"
+                    } else {
+                        return "Fail"
+                    }
+                }
+        }
+        function check() {
+            const student1 = new Student("Prajwal", 1, 88);
+            const student2 = new Student("Pranav", 2, 40);
+
+            const resultEl = document.getElementById("result");
+
+            resultEl.innerHTML = "";
+
+            resultEl.innerHTML += student1.getDetails() + "Grade: " + student1.getGrade() + "<hr/>";
+            resultEl.innerHTML += student2.getDetails() + "Grade: " + student2.getGrade();
+            }
+        </script>
+    </body>
+</html>
