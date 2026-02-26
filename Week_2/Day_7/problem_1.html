@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Marks Analyzer</title>
+    </head>
+    <body>
+        <style>
+            body {
+                background-color: lightcyan;
+            }
+
+            .analyze {
+                color: white;
+                background-color: blue;
+                border-radius: 8px;
+                padding: 10px;
+                border-width: 0px;
+            }
+
+            .input {
+                padding: 10px;
+                width: 200px;
+                border-radius: 8px;
+                border-width: 0px;
+            }
+
+            .passOrFail {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        </style>
+
+        <h1>Student Marks Sheet</h1>
+
+        
+        <button class="analyze" onclick="analyze()">Analyze</button>
+
+        <p id="para"></p>
+        <p id="passOrFail" class="passOrFail"></p>
+
+        <script>
+            function analyze() {
+                
+
+                const marks = [34, 67, 45, 87, 90]
+
+                const total = marks.reduce((sum,mark) => sum+mark, 0);
+
+                const average = total / marks.length;
+
+                const result = average >= 40 ? "Pass" : "Fail"
+
+                let para = document.getElementById("para");
+                let para1 = document.getElementById("passOrFail")
+
+                para.innerHTML = `
+                Marks: ${marks} <br>
+                Total: ${total} <br>
+                Average: ${average.toFixed(2)} <br>
+                `;
+
+                para1.innerText = `Result: ${result}`;
+
+                if (result === "Pass") {
+                    para1.style.color = "green";
+                } else {
+                    para1.style.color = "red";
+                }
+            }
+        </script>
+    </body>
+</html>

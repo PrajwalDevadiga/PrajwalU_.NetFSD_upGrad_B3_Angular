@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Employee Table</title></head>
+    <body>
+        <style>
+            body {
+                background-color: blanchedalmond;
+                text-align: center;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .button {
+                color: white;
+                background-color: brown;
+                border-radius: 8px;
+                padding: 8px;
+                border-width: 0px;
+            }
+
+            .select {
+                padding: 10px;
+                margin: 5px;
+            }
+
+            table {
+                margin-top: 20px;
+            }
+
+            th, td {
+                text-align: center;
+            }
+        </style>
+
+        <div>
+            <h1>Employee Table</h1>
+            <div class="container">
+                <select id="jobRole" class="select">
+                    <option value="All Employees">All Employees</option>
+                    <option value="Salesman">Salesman</option>
+                    <option value="Clerk">Clerk</option>
+                    <option value="Manager">Manager</option>
+                </select>
+                <button onclick="showEmployee()" class="button">Show Employees</button>
+            </div>
+            <br/><br/>
+
+            <table border="1" cellpadding="10" cellspacing="10" id="table"></table>
+        </div>
+
+        <script>
+            const employees = [
+                {id:1, name:"Rahul", job:"Manager", salary: "60000"},
+                {id:2, name:"Abhay", job:"Clerk", salary: "34000"},
+                {id:3, name:"Sinan", job:"Salesman", salary: "20000"},
+                {id:4, name:"Bhavan", job:"Salesman", salary: "25000"},
+                {id:5, name:"Sidhvin", job:"Manager", salary: "65000"},
+                {id:6, name:"Ravi", job:"Salesman", salary: "30000"},
+            ]
+            function showEmployee() {
+                const job = document.getElementById("jobRole").value;
+                const table = document.getElementById("table");
+
+                let selectedEmployees = [];
+
+                if (job === "All Employees") {
+                    selectedEmployees = employees;
+                } else {
+                    selectedEmployees = employees.filter((employee) => employee.job === job);
+                }
+
+                table.innerHTML = `
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Job</th>
+                            <th>Salary</th>
+                        </tr>
+                `;
+
+                selectedEmployees.map(employee => {
+                    table.innerHTML += `
+                        <tr>
+                            <td>${employee.id}</td>
+                            <td>${employee.name}</td>
+                            <td>${employee.job}</td>
+                            <td>${employee.salary}</td>
+                        </tr>
+                    `
+                })
+            }
+        </script>
+    </body>
+</html>

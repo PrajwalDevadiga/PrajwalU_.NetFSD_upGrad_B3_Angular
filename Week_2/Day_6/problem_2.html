@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f2f2f2;
+      padding: 40px;
+    }
+
+    .form-box {
+      background: white;
+      padding: 25px;
+      width: 350px;
+      border-radius: 8px;
+    }
+
+    input {
+      width: auto;
+      padding: 10px;
+      margin: 8px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+    }
+
+    .success {
+      color: green;
+      font-size: 13px;
+    }
+
+    button {
+      padding: 10px;
+      width: 100%;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-box">
+  <h1>Live Form Validation</h1>
+  <br/><br/>
+  <h2>Registration Form</h2>
+
+  <input type="text" id="name" placeholder="Enter The Name" onchange="validateName()">
+  <div id="nameMsg"></div>
+
+  <input type="text" id="email" placeholder="Enter Email" onchange="validateEmail()">
+  <div id="emailMsg"></div>
+
+  <input type="number" id="age" placeholder="Enter Age" onchange="validateAge()">
+  <div id="ageMsg"></div>
+
+  <button onclick="submitForm()">Submit</button>
+  <div id="finalMsg"></div>
+</div>
+
+<script>
+  function validateName() {
+    let name = document.getElementById("name").value;
+    let msg = document.getElementById("nameMsg");
+
+    if (name === "") {
+      msg.innerText = "Name cannot be empty";
+      msg.className = "error";
+      
+    } else {
+      msg.innerText = "Valid Name";
+      msg.className = "success";
+      
+    }
+  }
+
+  function validateEmail() {
+    let email = document.getElementById("email").value;
+    let msg = document.getElementById("emailMsg");
+
+    if (email.indexOf("@") === -1) {
+      msg.innerHTML = "Email must contain @";
+      msg.className = "error";
+    } else {
+      msg.innerText = "Valid Email";
+      msg.className = "success";
+    }
+  }
+
+  function validateAge() {
+    let age = document.getElementById("age").value;
+    let msg = document.getElementById("ageMsg");
+
+    if (age <= 18 || age === "") {
+      msg.innerHTML = "Age must be greater than 18";
+      msg.className = "error";
+    } else {
+      msg.innerHTML = "Valid Age";
+      msg.className = "success";
+    }
+  }
+
+  function submitForm() {
+    let isNameValid = validateName();
+    let isEmailValid = validateEmail();
+    let isAgeValid = validateAge();
+
+    let finalMsg = document.getElementById("finalMsg");
+
+    if (isNameValid && isEmailValid && isAgeValid) {
+      let userData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        age: document.getElementById("age").value
+      };
+
+      sessionStorage.setItem("user", JSON.stringify(userData));
+
+      finalMsg.innerHTML = "Form submitted successfully!";
+      finalMsg.className = "success";
+    } else {
+      finalMsg.innerHTML = "Please fix errors before submitting.";
+      finalMsg.className = "error";
+    }
+  }
+</script>
+
+</body>
+</html>

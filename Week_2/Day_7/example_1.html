@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+<body>
+    <h1>Array of Objects</h1>
+    <hr/>
+
+    <button  onclick="button1Click()">Button-1</button>
+    <hr/>
+
+    
+
+    <hr/>
+
+    <footer>
+        <mark>Note: Working with Array of objects.</mark>    
+    </footer>
+
+    <script> 
+
+        function button1Click(){ 
+
+
+            let studentsArray = [
+                {id : 10256, name : "Scott", course : "React"},
+                {id : 10257, name : "Smith", course : "Angular"},
+                {id : 10258, name : "Sam", course : "Vue"},
+                {id : 10259, name : "Sandy", course : "Node"},
+                {id : 10260, name : "Stephen", course : "Angular"},
+                {id : 10261, name : "Abhay", course : "Vue"},
+                {id : 10262, name : "Sinan", course : "Vue"},
+            ];
+
+            console.log(studentsArray);
+
+
+            let st_id = 10258;
+
+            let index = studentsArray.findIndex(student => student.id == st_id);
+            let stObj = studentsArray.find(student => student.id == st_id);
+            let index1 = studentsArray.findIndex(student => student.id == 10260);
+            let stObj1 = studentsArray.find(student => student.id == 10260);
+
+            console.log(index);
+            console.log(stObj);
+            console.log(index1);
+            console.log(stObj1);
+
+        let resultArray = studentsArray.filter(student => student.course == "Angular");
+ 
+        let resultArray1 = studentsArray.filter(student => student.course == "Vue");
+        let resultArray2 = studentsArray.find(student => student.course == "Vue");
+        console.log(resultArray); 
+        console.log(resultArray1); 
+        console.log(resultArray2);  
+
+        
+            
+
+ 
+        }
+    </script>
+</body>
+</html>

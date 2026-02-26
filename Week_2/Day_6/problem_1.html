@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <style>
+            body {
+                background-color: lightcyan;
+            }
+
+            .save {
+                background-color: blue;
+                color: white;
+                font-family: "Roboto";
+                padding: 10px;
+                border-radius: 5px;
+                border-width: 0px;
+                width: 100px;
+            }
+
+            .clear {
+                background-color: red;
+                color: white;
+                font-family: "Roboto";
+                padding: 10px;
+                border-radius: 5px;
+                border-width: 0px;
+                width: 100px;
+            }
+
+            .retrieve {
+                background-color: black;
+                color: white;
+                font-family: "Roboto";
+                padding: 10px;
+                border-radius: 5px;
+                border-width: 0px;
+                width: 100px;
+            }
+        </style>
+
+        <h1>Personal Notes Saver</h1>
+        <textarea id="notes" rows="10" cols="40" placeholder="Write your notes"></textarea>
+        <br/><br/>
+
+        <button class="save" onclick="saveNotes()">Save</button>
+        <button class="retrieve" onclick="retrieveNotes()">Retrieve</button>
+        <button class="clear" onclick="clearNotes()">Clear</button>
+        <p id="retrieve"></p>
+
+        <script>
+
+            window.onload = function() {
+                let savedNotes = localStorage.getItem('daliyNotes');
+                if (savedNotes !== null) {
+                    document.getElementById("notes").value = savedNotes;
+                }
+            }
+
+            function saveNotes() {
+                let notes = document.getElementById("notes").value;
+                localStorage.setItem("daliyNotes", notes);
+                alert("Notes Saved Successfully");
+            }
+
+            function clearNotes() {
+                document.getElementById("notes").value = "";
+                localStorage.removeItem("daliyNotes");
+                alert("Note Cleared!");
+            }
+
+            function retrieveNotes() {
+                let retrieve = document.getElementById("retrieve");
+                let display = document.getElementById("notes").value;
+                retrieve.innerText = display;
+            }
+        </script>
+    </body>
+</html>

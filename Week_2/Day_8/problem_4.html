@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        .container {
+            border-radius: 8px;
+            border-width: 1px;
+            border: solid black;
+            background-color: aliceblue;
+            padding: 5px;
+        }
+
+        .para {
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        button {
+            background-color: brown;
+            padding: 10px;
+            border-radius: 8px;
+            border-width: 0px;
+            color: white;
+        }
+    </style>
+
+    <h1>Data</h1>
+    <button onclick="addData()">Add Data</button>
+    <br/><br/>
+    <div class="container" id="container"></div>
+
+    <script>
+
+        let containerEl = document.getElementById("container");
+
+        //Promise 
+
+        const addData = () => {
+            let url = "https://jsonplaceholder.typicode.com/posts"
+            fetch(url)
+            .then((response) => {
+                console.log(response)
+                return response.json()
+            })
+            .then((jsonData) => {
+                console.log(jsonData)
+                let data = jsonData
+                displayData(data)
+                
+            })
+        }
+
+        function displayData(data) {
+            let str = "";
+            for (let item of data) {
+                console.log(item);
+
+                str += `<p class="para">
+                    ID: ${item.id} <br/>
+                    Title: ${item.title} <br/>
+                    Body: ${item.body}
+                    </p>
+                `;
+            }
+
+            containerEl.innerHTML = str;
+        }
+
+    </script>
+ 
+</body>
+</html>
