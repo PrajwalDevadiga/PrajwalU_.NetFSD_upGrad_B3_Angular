@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic FAQ Toggle Section</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        .question {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .answer {
+            display: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Dynamic FAQ Toggle Section</h2>
+
+<div>
+    <div>
+        <h4 class="question">1. What is Anonymous Function in JavaScript?</h4>
+        <p class="answer">An anonymous function is a function without a name.the function has no name.It is assigned to a variable.</p>
+    </div>
+
+    <div>
+        <h4 class="question">2. What is DOM Traversing?</h4>
+        <p class="answer">Moving between elements in DOM tree.</p>
+    </div>
+
+    <div >
+        <h4 class="question">3. What is slideToggle()?</h4>
+        <p class="answer">slideToggle() smoothly shows and hides elements with animation.</p>
+    </div>
+
+    <div>
+        <h4 class="question">4. What is DOM manipulation?</h4>
+        <p class="answer">It means dynamically changing HTML content using JavaScript or jQuery.</p>
+    </div>
+
+    <div>
+        <h4 class="question">5. What is event handling?</h4>
+        <p class="answer">Event handling allows code to respond to user actions like clicks.</p>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".question").click(function () {
+            $(".answer").hide();
+            $(this).next(".answer").toggle(1000);
+
+        });
+
+    });
+</script>
+
+</body>
+</html>
