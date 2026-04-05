@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Product Entry";
+    var products = ViewBag.Products as List<WebApplication3.Models.Product>;
+}
+
+<h2>Add Product</h2>
+
+<form method="post" action="/product/add">
+    <label>Product Name:</label>
+    <input type="text" name="productName" required />
+    <br />
+
+    <label>Price:</label>
+    <input type="number" name="price" step="0.01" required />
+    <br />
+
+    <label>Quantity:</label>
+    <input type="number" name="quantity" required />
+    <br />
+
+    <button type="submit">Add Product</button>
+</form>
+
+<hr />
+
+<h2>Product List</h2>
+
+@if (products != null && products.Count > 0)
+{
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+
+        @foreach (var item in products)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No products added yet.</p>
+}
